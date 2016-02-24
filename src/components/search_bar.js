@@ -10,6 +10,10 @@ class SearchBar extends Component {
     this.setState({term});
     this.props.onSearchTermChange(term);
   }
+  
+  rawMarkup () {
+      return {__html: marked(this.props.children.toString(), {sanitize: true}) };
+  };
 
   render () {
     return (
